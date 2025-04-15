@@ -1,0 +1,3 @@
+fdk
+oracledb
+oci
