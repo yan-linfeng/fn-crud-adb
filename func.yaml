@@ -1,5 +1,5 @@
 schema_version: 20180708
-name: create-func
+name: crud-func
 version: 0.0.127
 runtime: podman
 entrypoint: /python/bin/fdk /function/func.py handler
