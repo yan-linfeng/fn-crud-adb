@@ -54,7 +54,7 @@ def handle_post(ctx, data: io.BytesIO = None):
             raise KeyError('No keys in payload')
         payload = json.loads(payload_bytes)
         
-        user_id = None
+        user_id = ''
         path = ctx.RequestURL()
         print("INFO: Url path is parsed as {}".format(path), flush=True)
         path_parts = path.strip('/').split('/')
@@ -63,7 +63,7 @@ def handle_post(ctx, data: io.BytesIO = None):
             user_id = path_parts[-1]
             print("INFO: User ID is parsed as {}".format(user_id), flush=True)
 
-        if user_id is None:
+        if user_id == '':
             raise ValueError("Missing required fields: user_id")
 
         first_name = payload.get("first_name")
