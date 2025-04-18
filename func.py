@@ -66,11 +66,11 @@ def handle_post(ctx, data: io.BytesIO = None):
         if user_id == '':
             raise ValueError("Missing required fields: user_id")
 
-        print(payload)
+        print(payload, flush=True)
         first_name = payload.get("first_name")
         last_name = payload.get("last_name")
         username = payload.get("username")
-        print("INFO: Mid")
+        print("INFO: Mid", flush=True)
         if not first_name or not last_name or not username:
             raise ValueError("Missing required fields: first_name, last_name, username")
 
