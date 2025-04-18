@@ -58,8 +58,10 @@ def handle_post(ctx, data: io.BytesIO = None):
         path = ctx.RequestURL()
         print("INFO: Url path is parsed as {}".format(path), flush=True)
         path_parts = path.strip('/').split('/')
+        print("INFO: path_parts parsed", flush=True)
         if len(path_parts) >= 2 and path_parts[-2] == 'users':
             user_id = path_parts[-1]
+            print("INFO: User ID is parsed as {}".format(user_id), flush=True)
 
         if not user_id:
             raise ValueError("Missing required fields: user_id")
@@ -67,7 +69,7 @@ def handle_post(ctx, data: io.BytesIO = None):
         first_name = payload.get("first_name")
         last_name = payload.get("last_name")
         username = payload.get("username")
-
+        print("INFO: Mid")
         if not first_name or not last_name or not username:
             raise ValueError("Missing required fields: first_name, last_name, username")
 
