@@ -63,7 +63,7 @@ def handle_post(ctx, data: io.BytesIO = None):
             user_id = path_parts[-1]
             print("INFO: User ID is parsed as {}".format(user_id), flush=True)
 
-        if not user_id:
+        if user_id is None:
             raise ValueError("Missing required fields: user_id")
 
         first_name = payload.get("first_name")
