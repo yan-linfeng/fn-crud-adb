@@ -34,7 +34,7 @@ print("INFO: DB pool created in {} sec".format(end_pool - start_pool), flush=Tru
 #
 def handler(ctx, data: io.BytesIO = None):
     try:
-        method = ctx.Mehod()
+        method = ctx.Method()
         if method == 'POST':
             return handle_post(ctx, data)
         elif method == 'GET':
